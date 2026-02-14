@@ -92,7 +92,8 @@ public class ExcelService {
 			row.createCell(0).setCellValue(r.getActivity().getType().name());
 			row.createCell(1).setCellValue(r.getType());
 			row.createCell(2).setCellValue(r.getRecommendation());
-			row.createCell(3).setCellValue(r.getCreatedAt());
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyy HH:mm");
+			row.createCell(3).setCellValue(r.getCreatedAt().format(formatter));
 			row.createCell(4).setCellValue(r.getUser().getFirstName());
 			row.createCell(5).setCellValue(r.getUser().getEmail());;
 		}

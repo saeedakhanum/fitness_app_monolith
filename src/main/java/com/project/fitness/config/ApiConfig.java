@@ -12,7 +12,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
 				description="REST endpoints to perform different operations on Fitness App.",
 				license=@License(
 						name="ABC Company Ltd",
-						url="https://www.abccompany.in"
+						url="https://www.google.com"
 						)
 				),
 			servers=@Server(description="localhost",url="http://localhost:8080")

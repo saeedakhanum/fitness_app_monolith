@@ -1,6 +1,7 @@
 package com.project.fitness.service;
 
 import java.io.ByteArrayOutputStream;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -109,7 +110,8 @@ public class PdfService {
 		table.addCell("Duration (min)");
 		table.addCell("Calories Burnt");
 		for (Activity a : activities) {
-			table.addCell(String.valueOf(a.getStartTime()));
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+			table.addCell(String.valueOf(a.getStartTime().format(formatter)));
 			table.addCell(a.getUser().getFirstName());
 			table.addCell(a.getType().name());
 			table.addCell(String.valueOf(a.getDuration()));
